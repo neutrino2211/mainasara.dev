@@ -37,7 +37,6 @@ jobs:
       - name: Deploy to mainasara.dev
         uses: easingthemes/ssh-deploy@main
         with:
-          SOURCE: "dist/"
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: mainasara.dev
           REMOTE_USER: root
