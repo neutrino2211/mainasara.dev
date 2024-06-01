@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Mainasara Tsowa",
   desc: "A place where Mainasara says things.",
   title: "Mainasara's Blog",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "blog-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 5,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes

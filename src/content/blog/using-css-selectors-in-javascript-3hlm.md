@@ -1,7 +1,6 @@
 ---
 author: Mainasara Tsowa
 pubDatetime: 2019-03-04T16:07:03Z
-ogImage: https://dev.to/neutrino2211/using-css-selectors-in-javascript-3hlm
 title: Using CSS Selectors In Javascript
 featured: true
 description: A guide to fully understanding CSS selectors in javascript

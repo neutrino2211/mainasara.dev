@@ -9,7 +9,6 @@ tags:
     - javascript
     - showdev
     - nodejs
-ogImage: https://thepracticaldev.s3.amazonaws.com/i/v8dqa0xnqe6p4so6zs6o.jpg
 ---
 
 Javascript is a single-threaded language, this in certain situations can be very limiting because the process is stuck executing on one thread and can't fully utilize the CPU it is running on but thanks to concurrency, it's single-threaded nature is less of a problem.

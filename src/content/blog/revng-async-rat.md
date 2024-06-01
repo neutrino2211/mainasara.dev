@@ -1,7 +1,6 @@
 ---
 author: Mainasara Tsowa
 pubDatetime: 2024-04-04T20:44:51Z
-ogImage: /revng-async-rat/cover.jpg
 title: "Technical Analysis: Async Rat 👾"
 featured: true
 description: "A technical analysis of the AsyncRat remote access trojan that rose in 2021 and has managed to stay relevant till now (Q1 2024)"

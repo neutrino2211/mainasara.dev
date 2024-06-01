@@ -6,7 +6,6 @@ tags:
     - html
     - discuss
 pubDatetime: 2019-02-26T15:33:35Z
-ogImage: https://dev.to/neutrino2211/do-we-need-to-compile-website-components-5a22
 title: Do We Need To Compile Website Components?
 description: A discussion on the state of component-based rendering and if compilers don't need to be a part of the process.
 ---

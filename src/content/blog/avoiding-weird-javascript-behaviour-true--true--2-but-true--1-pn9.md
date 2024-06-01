@@ -1,7 +1,6 @@
 ---
 author: Mainasara Tsowa
 pubDatetime: 2019-03-11T19:15:38Z
-ogImage: https://dev.to/neutrino2211/avoiding-weird-javascript-behaviour-true--true--2-but-true--1-pn9
 title: Avoiding Weird Javascript Behaviour (true + true === 2 but true !== 1)
 featured: true
 description: Explaining some weird behavior in javascript and how to avoid it

@@ -1,7 +1,6 @@
 ---
 author: Mainasara Tsowa
 pubDatetime: 2019-04-04T20:44:51Z
-ogImage: https://dev.to/neutrino2211/how-to-avoid-javascript-bugs-31pm
 title: How To Avoid Javascript Bugs
 description: Essential tips on how to avoid most javascript bugs
 tags:
