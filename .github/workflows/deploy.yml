@@ -34,3 +34,6 @@ jobs:
           REMOTE_HOST: mainasara.dev
           REMOTE_USER: root
           TARGET: /root/mainasara.dev
+          SCRIPT_BEFORE: lsof -i tcp:4321 | awk 'NR!=1 {print $2}' | xargs kill
+          SCRIPT_AFTER: cd && bun mainasara.dev/dist/server/entry.mjs
+            

@@ -20,7 +20,7 @@ I mostly work with backend and systems programming languages like
 - Go
 - C
 - C++ (eww)
-- NodeJS
+- Node.js
 - Zig
 - Gleam
 - Python
