@@ -4,7 +4,7 @@ title: "About"
 ---
 
 <div>
-  <img src="/assets/me.jpg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
+  <img src="/assets/me.jpg" class="sm:w-1/2 mx-auto" alt="Mainasara Al-amin Tsowa">
 </div>
 
 My name is Mainasara Al-amin Tsowa, I am a software engineer and cybersecurity professional based in *Abuja, Nigeria*.
