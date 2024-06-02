@@ -35,5 +35,5 @@ jobs:
           REMOTE_USER: root
           TARGET: /root/mainasara.dev
           SCRIPT_BEFORE: lsof -i tcp:4321 | awk 'NR!=1 {print $2}' | xargs kill || true # This should be allowed to fail
-          SCRIPT_AFTER: cd && bun mainasara.dev/dist/server/entry.mjs
+          SCRIPT_AFTER: cd && /root/.bun/bin/bun mainasara.dev/dist/server/entry.mjs
             
