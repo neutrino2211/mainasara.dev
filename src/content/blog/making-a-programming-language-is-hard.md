@@ -258,14 +258,6 @@ class String {
 
   func printSelf(self: String*): void // An idea I was experimenting with (methods with no bodies are virtual and need implementing)
 }
-
-external func main(): int {
-  let str: String
-
-  printf("Size of string: %d\n", str.size())
-
-  return 0
-}
 ```
 
 Compiling the code into an object file, it generates the following header file (Gecko code compiled as libraries generate an object file and a corresponding .h file. <gecko/gecko.h> being the little gecko std lib I made) 
@@ -304,6 +296,8 @@ int main() {
 ```
 
 It runs!!!
+
+![Classes Example Program Successful Compilation](/assets/gecko/class.gecko-1.png)
 
 ## Conclusion
 
