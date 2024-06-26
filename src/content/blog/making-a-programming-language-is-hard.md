@@ -1,9 +1,9 @@
 ---
 author: Mainasara Tsowa
-pubDatetime: 2024-06-26T00:47:38Z
+pubDatetime: 2024-06-26T22:14:00Z
 title: 'Gecko: Making a programming language is hard 😮‍💨'
 featured: true
-published: false
+published: true
 description: I started working on a programming language 4 years ago
 tags:
     - golang
