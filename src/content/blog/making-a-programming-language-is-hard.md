@@ -11,7 +11,7 @@ tags:
     - projects
 ---
 
-Seemingly every programmer has a dream, making a programming language. It's not a bad idea, really, making a programming language fueled by your ideas of what makes the 'perfect language' is exciting but... the process is not for the faint of heart.
+Seemingly every programmer has a dream, making a programming language. It's not a bad idea, really, making a programming language fueled by your ideas of what makes the 'perfect language' is exciting but... the process is not for the faint at heart.
 
 ## Table of contents
 
