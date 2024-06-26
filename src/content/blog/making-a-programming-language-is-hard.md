@@ -230,7 +230,7 @@ Up until this point, gecko has only transpiled to LLIR but since that is becomin
 
 But the AST and compiler were so heavily expectant on the backend being LLVM that I needed to do a whole rewrite of the interface between the AST, Compiler and whatever does the transpiling.
 
-About a thousand loc later, I managed to move the LLVM implemenation into a backend interface but that was just part one. I needed to implement the C backend, and a few hundred more lines of code later, I had a C backend that could use clang/gcc to compile the code into machine code.
+About a thousand loc later, I managed to move the LLVM implementation into a backend interface but that was just part one. I needed to implement the C backend, and a few hundred more lines of code later, I had a C backend that could use clang/gcc to compile the code into machine code.
 
 With this, I tested classes and C interop.
 
