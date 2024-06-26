@@ -337,3 +337,8 @@ And refactored more than I remember
 Making a programming language is exciting but if you are not in it for the long haul, you can get very demotivated and the passion can drain.
 
 So please, before you start. Learn a bit of how to make a programming language and read [the manual](https://craftinginterpreters.com/)
+
+Oh, and celebrate your little wins! :)
+
+<blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="en" dir="ltr">It took a year and a lot of frustrations but my hobby programming language has gone from 0 to resolving variables!!!!! 😂 <a href="https://t.co/8bQZeMjfcU">pic.twitter.com/8bQZeMjfcU</a></p>&mdash; Mainasara 🇳🇬 (@neutrino2211) <a href="https://twitter.com/neutrino2211/status/1724224918328414279?ref_src=twsrc%5Etfw">November 14, 2023</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
