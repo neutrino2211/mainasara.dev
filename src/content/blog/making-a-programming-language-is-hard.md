@@ -1,12 +1,13 @@
 ---
 author: Mainasara Tsowa
 pubDatetime: 2024-06-26T00:47:38Z
-title: 'Gecko: Making a programming language is hard '
+title: 'Gecko: Making a programming language is hard 😮‍💨'
 featured: true
 published: false
 description: I started working on a programming language 4 years ago
 tags:
     - golang
+    - gecko
     - projects
 ---
 
@@ -81,7 +82,7 @@ If it wasn't obvious with the way I mentioned it, let me do so now, explicitly. 
 
 To use LLVM, one needs to understand low level concepts like the stack, registers, code sections and more. Luckily I had a bit of experience with ASM and was able to pick up a few concepts but it became obvious that LLVM is a completely different beast (huh, that Dragon makes a bit more sense now)
 
-I began with trying to transpile gecko code into LLIR which makes it relatively easy to compile it into machine code the LLVM llc program. LLIR though, has a deceptive simplicity. The following LLIR produces a valid program.
+I began with trying to transpile gecko code into LLIR which makes it relatively easy to compile it into machine code using the LLVM llc program. LLIR though, has a deceptive simplicity. The following LLIR produces a valid program.
 
 ```llir
 ; Declare the string constant as a global constant.
@@ -166,13 +167,13 @@ Given the following C code...
 ```c
 #include <stdio.h>
 
-char* get_some() {
+char* get_hello() {
   char* r = "Hello";
   return r;
 }
 
 int main(int argc, char** argv) {
-  char* names[3] = {"One", "Two", get_some()};
+  char* names[3] = {"One", "Two", get_hello()};
   printf("name: %s, arr[0]: %s\n", argv[3], names[1]);
 }
 ```
@@ -227,7 +228,7 @@ So, if my attempt to use LLVM is bringing more issues than progress, what can I 
 
 Up until this point, gecko has only transpiled to LLIR but since that is becoming a problem, I decided to transpile to C instead. Something I understand and can implement multiple features for, struct-based classes, loops, branches, lists and more.
 
-But the AST and compiler was so heavily expectant on the backend being LLVM that I needed to do a whole rewrite of the interface between the AST, Compiler and whatever does the transpiling.
+But the AST and compiler were so heavily expectant on the backend being LLVM that I needed to do a whole rewrite of the interface between the AST, Compiler and whatever does the transpiling.
 
 About a thousand loc later, I managed to move the LLVM implemenation into a backend interface but that was just part one. I needed to implement the C backend, and a few hundred more lines of code later, I had a C backend that could use clang/gcc to compile the code into machine code.
 
@@ -255,7 +256,7 @@ class String {
     return sizeof(*self)
   }
 
-  func printSelf(self: String*): void
+  func printSelf(self: String*): void // An idea I was experimenting with (methods with no bodies are virtual and need implementing)
 }
 
 external func main(): int {
@@ -267,7 +268,7 @@ external func main(): int {
 }
 ```
 
-Compiling the code into an object file, it generates the following header file (<gecko/gecko.h> being the little gecko std lib I made) 
+Compiling the code into an object file, it generates the following header file (Gecko code compiled as libraries generate an object file and a corresponding .h file. <gecko/gecko.h> being the little gecko std lib I made) 
 
 ```c
 //Gecko standard library
@@ -312,9 +313,9 @@ But the bugs... the bugs.. Oh God.
 
 ### Golang Nil Errors
 
-Golang has an annoying habit of giving you a present box with nothing inside and then complaining that the box has nothing inside when you give it back. This inspired me to create a package to have rust-like errors in Golang.
+Golang has an annoying habit of giving you a gift box with nothing inside and then complaining that the box has nothing inside when you give it back. This inspired me to create a package to have [rust-like errors in Golang](https://github.com/neutrino2211/go-option).
 
-I need to refactor a lot of the code to use this package.
+I need to refactor a lot of the code to use this package (plus I called it go-option not go-result).
 
 ### Refactoring & Rewrites
 
@@ -336,7 +337,7 @@ And refactored more than I remember
 
 Making a programming language is exciting but if you are not in it for the long haul, you can get very demotivated and the passion can drain.
 
-So please, before you start. Learn a bit of how to make a programming language and read [the manual](https://craftinginterpreters.com/)
+So please, before you start. Learn a bit of how to make a programming language and read what I think people believe is [the unofficial manual](https://craftinginterpreters.com/) on making programming languages.
 
 Oh, and celebrate your little wins! :)
 
