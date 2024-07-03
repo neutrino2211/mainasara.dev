@@ -49,11 +49,11 @@ Yes, I wrote the above heading for a reason.
 - [NetworkDMZ](https://github.com/neutrino2211/network-dmz): An incident response tool that allows you to shutdown all communication in a network e.g (In case of Malware Infection, push this big red button)
 - [EXEPatch](https://github.com/neutrino2211/exe-patch): A red team tool that aims to allow users to create malware payloads that pass as the original programs they are based off of.
 
-Not a project but I am very proud to have contributed to the following projects.
+Not my projects but I am very proud to have contributed to the following.
 
-- [create-hono](https://github.com/honojs/create-hono)
-  Helped improve the gettings started experience of the create-hono cli with [this issue](https://github.com/honojs/create-hono/issues/18)
-- [rabbitude](https://rabbitu.de)
+- [create-hono](https://github.com/honojs/create-hono):
+  Helped improve the getting started experience of the create-hono cli with [this issue](https://github.com/honojs/create-hono/issues/18)
+- [rabbitude](https://rabbitu.de):
   By far my proudest FOSS contributions are in the Rabbitude firmburrow which houses repositories of code aimed at helping people improve their Rabbit R1 experience.
 
   My ongoing contribution is the `vult` system for securely storing user credentials/data. [Take a look](https://firmburrow.rabbitu.de/neutrino2211/vult)
