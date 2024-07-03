@@ -44,7 +44,7 @@ Yes, I wrote the above heading for a reason.
 
 - [Gecko](https://github.com/neutrino2211/gecko): An experimental systems programming language with strict type-checking and an Object-Oriented paradigm with builtin C interop
 - [Nomad](https://github.com/Nomad-Network/nomad): A decentralised database format that aims to be the founding block of community driven decentralised experiences
-- [go-option](https://github.com/neutrino2211/go-option): A library that adds Rust-like options to Golang
+- [go-result](https://github.com/neutrino2211/go-result): A library that adds Rust-like results to Golang
 - [Scryer](https://github.com/neutrino2211/scryer): A network-based IDS (Intrusion Detection System)
 - [NetworkDMZ](https://github.com/neutrino2211/network-dmz): An incident response tool that allows you to shutdown all communication in a network e.g (In case of Malware Infection, push this big red button)
 - [EXEPatch](https://github.com/neutrino2211/exe-patch): A red team tool that aims to allow users to create malware payloads that pass as the original programs they are based off of.
