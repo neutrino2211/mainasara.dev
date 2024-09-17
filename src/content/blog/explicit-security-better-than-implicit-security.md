@@ -20,17 +20,17 @@ Not all security is made equal. One might think that the following code is secur
 #include <stdio.h>
 #include <string.h>
 int main() {
-  char input[100];
-  const char *secretCode = "OpenSesame"; // Expected input
-  printf("Enter the vault code: ");
-  scanf("%99s", input);  // Read user input, limit to 99 characters
-  // Check if input matches the expected code
-  if (strcmp(input, secretCode) == 0) {
-    printf("Vault Opened\n");
-  } else {
-    printf("Incorrect code. Access Denied.\n");
-  }
-  return 0;
+    char input[100];
+    const char *secretCode = "OpenSesame"; // Expected input
+    printf("Enter the vault code: ");
+    scanf("%99s", input);  // Read user input, limit to 99 characters
+    // Check if input matches the expected code
+    if (strcmp(input, secretCode) == 0) {
+        printf("Vault Opened\n");
+    } else {
+        printf("Incorrect code. Access Denied.\n");
+    }
+    return 0;
 }
 ```
 
