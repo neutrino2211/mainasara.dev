@@ -108,6 +108,14 @@ const socialImageURL = new URL(
     <ViewTransitions />
 
     <script is:inline src="/toggle-theme.js"></script>
+    <script is:inline src="https://tfpb.techforpalestine.org/lib/banner.min.js"></script>
+    <script is:raw is:inline>
+      TFPBanner.create({
+        theme: "auto",
+        fixed: false,
+      });
+    </script>
+
   </head>
   <body>
     <slot />
