@@ -4,7 +4,7 @@ import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   href?: string;
-  frontmatter: CollectionEntry<"blog">["data"];
+  frontmatter: CollectionEntry<"blog" | "talk">["data"];
   secHeading?: boolean;
 }
 
@@ -18,6 +18,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
 
   return (
     <li className="my-6">
+      {frontmatter.image ? <img className="h-48 w-full object-cover rounded-sm" src={frontmatter.image?.toString()} alt={title + " Image"} /> : null}
       <a
         href={href}
         className="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"

@@ -2,7 +2,7 @@
 title: "Demonstration: Cyberplural phishkit & How to setup and deploy a phishing site"
 event: Cybersecurity Day at the Nigerian Airforce Institue of Technology
 pubDatetime: 2024-03-09T13:15:00Z
-image: /afit/AFIT-2024-CSDAY.jpeg
+image: /assets/afit/AFIT-2024-CSDAY.jpeg
 description: At the inaugral Cybersecurity Day of the Nigerian Airforce Institute of Technology, Kaduna. I had the opporunity to speak on one of the internal red-team tools I developed at cyberplural.
 ---
 

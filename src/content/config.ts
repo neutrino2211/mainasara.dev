@@ -20,6 +20,7 @@ const blog = defineCollection({
         .optional(),
       description: z.string(),
       canonicalURL: z.string().optional(),
+      image: image().or(z.string()).optional()
     }),
 });
 
@@ -42,6 +43,7 @@ const talk = defineCollection({
         .optional(),
       description: z.string(),
       canonicalURL: z.string().optional(),
+      image: image().or(z.string()).optional()
     }),
 });
 
