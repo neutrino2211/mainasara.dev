@@ -4,6 +4,7 @@ event: TechXCite 2024
 pubDatetime: 2024-12-11T15:15:00Z
 image: "/assets/techxcite/TechXcite_112.jpg"
 description: At techxcite24, I gave a talk on the steps one can take to secure themselves online in an ever data-hungry world. The talk boiled down most needs into four broad caricatures which I used to explain the best ways to approach online security.
+featured: true
 tags:
   - talk
   - presentation

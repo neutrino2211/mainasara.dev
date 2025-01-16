@@ -11,11 +11,10 @@ import getSortedPosts from "@utils/getSortedPosts";
 import { SOCIALS } from "@config";
 import convertAsteriskToStrongTag from "@utils/asteriskToStrong";
 
-const posts = await getCollection("blog");
+const posts = [...(await getCollection("blog")), ...(await getCollection("talk"))];
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 ---
@@ -77,17 +76,17 @@ const socialCount = SOCIALS.filter(social => social.active).length;
               ))}
             </ul>
           </section>
-          {recentPosts.length > 0 && <Hr />}
+          {sortedPosts.length > 0 && <Hr />}
         </>
       )
     }
 
     {
-      recentPosts.length > 0 && (
+      sortedPosts.length > 0 && (
         <section id="recent-posts">
-          <h2>Recent Posts</h2>
+          <h2>Recent</h2>
           <ul>
-            {recentPosts.map(
+            {sortedPosts.map(
               ({ data, slug }, index) =>
                 index < 4 && (
                   <Card
