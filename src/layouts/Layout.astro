@@ -120,7 +120,9 @@ const socialImageURL = new URL(
     <script is:inline src="https://swetrix.org/swetrix.js" defer></script>
     <script is:inline is:raw>
       document.addEventListener('DOMContentLoaded', function() {
-        swetrix.init('JpwsFtS91vXz')
+        swetrix.init('JpwsFtS91vXz', {
+          apiURL: 'https://api.swetrix.mainasara.dev/log',
+        })
         swetrix.trackViews()
       })
     </script>
