@@ -115,9 +115,23 @@ const socialImageURL = new URL(
         fixed: false,
       });
     </script>
-
   </head>
   <body>
+    <script is:inline src="https://swetrix.org/swetrix.js" defer></script>
+    <script is:inline is:raw>
+      document.addEventListener('DOMContentLoaded', function() {
+        swetrix.init('JpwsFtS91vXz')
+        swetrix.trackViews()
+      })
+    </script>
+
+    <noscript>
+      <img
+        src="https://api.swetrix.mainasara.dev/log/noscript?pid=JpwsFtS91vXz"
+        alt=""
+        referrerpolicy="no-referrer-when-downgrade"
+      />
+    </noscript>
     <slot />
   </body>
 </html>
