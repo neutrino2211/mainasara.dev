@@ -11,7 +11,10 @@ import getSortedPosts from "@utils/getSortedPosts";
 import { SOCIALS } from "@config";
 import convertAsteriskToStrongTag from "@utils/asteriskToStrong";
 
-const posts = [...(await getCollection("blog")), ...(await getCollection("talk"))];
+const posts = [
+  ...(await getCollection("blog")),
+  ...(await getCollection("talk")),
+];
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
@@ -41,13 +44,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         <span class="sr-only">RSS Feed</span>
       </a>
 
-      <p set:html={convertAsteriskToStrongTag(`Hello, i'm a *Backend/DevOps engineer* and *Malware Reverse Engineer*
+      <p
+        set:html={convertAsteriskToStrongTag(`Hello, i'm a *Backend/DevOps engineer* and *Malware Reverse Engineer*
       with over *5 years* of experience with *Go, Python, Node.js and Typescript*
       and over *2 years* of experience in *Professional Cybersecurity*. Outside of
-      work I work on my hobby projects and play a lot of Football Manager.`)}></p>
-      <p>
-        You can read my blog posts/talks or connect with me on my Socials.
-      </p>
+      work I work on my hobby projects and play a lot of Football Manager.`)}
+      />
+      <p>You can read my blog posts/talks or connect with me on my Socials.</p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
@@ -67,9 +70,9 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           <section id="featured">
             <h2>Featured</h2>
             <ul>
-              {featuredPosts.map(({ data, slug }) => (
+              {featuredPosts.map(({ data, slug, collection }) => (
                 <Card
-                  href={`/posts/${slug}/`}
+                  href={`/${collection}s/${slug}/`}
                   frontmatter={data}
                   secHeading={false}
                 />
