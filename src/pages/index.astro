@@ -16,6 +16,12 @@ const posts = [
   ...(await getCollection("talk")),
 ];
 
+// The 'blog' collection contents should point to /posts/
+const COLLECTION_TO_LINK_MAP = {
+  blog: "post",
+  talk: "talk"
+};
+
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
@@ -72,7 +78,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             <ul>
               {featuredPosts.map(({ data, slug, collection }) => (
                 <Card
-                  href={`/${collection}s/${slug}/`}
+                  href={`/${COLLECTION_TO_LINK_MAP[collection]}s/${slug}/`}
                   frontmatter={data}
                   secHeading={false}
                 />
