@@ -48,7 +48,7 @@ const layoutProps = {
 
 <Layout {...layoutProps}>
   {
-    Astro.url.origin === SITE.website ||
+    Astro.url.origin === SITE.website.slice(0, -1) ||
     Astro.url.origin === "http://localhost:4321" ? (
       <>
         <Header />
