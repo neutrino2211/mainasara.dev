@@ -3,7 +3,7 @@
   "version": "4.2.0",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "node ./dist/server/entry.mjs",
     "build": "astro check && astro build && jampack ./dist",
     "preview": "astro preview",
     "sync": "astro sync",
