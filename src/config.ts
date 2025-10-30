@@ -1,7 +1,7 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://mainasara.dev/", // replace this with your deployed domain
+  website: "https://blog.mainasara.dev/", // replace this with your deployed domain
   author: "Mainasara Tsowa",
   desc: "A place where Mainasara says things.",
   title: "Mainasara's Blog",
@@ -148,6 +148,6 @@ export const SOCIALS: SocialObjects = [
     name: "RSS",
     href: "/rss.xml",
     linkTitle: "RSS Feed",
-    active: false
-  }
+    active: false,
+  },
 ];
