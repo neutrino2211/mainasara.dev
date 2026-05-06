@@ -12,13 +12,13 @@ tags:
   - projects
 ---
 
-This is one of those "surely somebody already built this" projects that, somehow, didn’t exist.
+This is one of those "surely somebody already built this" projects that, somehow, did not exist.
 
 ## The problem
 
 I work in security, specifically in a SOC. A lot of my time is spent on night shifts staring at Wazuh alerts and following suspicious traffic patterns.
 
-In security, you need practice targets. You can’t test skills on production systems, so most of us run intentionally vulnerable apps in homelabs: DVWA, WebGoat, Juice Shop, and the usual suspects.
+In security, you need practice targets. You cannot test skills on production systems, so most of us run intentionally vulnerable apps in homelabs: DVWA, WebGoat, Juice Shop, and the usual suspects.
 
 The pain starts right there.
 
@@ -47,7 +47,7 @@ vuln-pkg run dvwa
 
 No compose files. No manual port mapping. No DNS setup. Just run a command.
 
-That’s where the name came from: `vuln-pkg`. A package manager for vulnerable apps. Basically npm, but for your homelab.
+That is where the name came from: `vuln-pkg`. A package manager for vulnerable apps. Basically npm, but for your homelab.
 
 ## Making it zero-config
 
@@ -67,7 +67,7 @@ I wanted cleaner URLs. Something like:
 
 without touching `/etc/hosts` or running local DNS services.
 
-That’s where [sslip.io](https://sslip.io) helped a lot. It resolves hostnames that contain an IP address:
+That is where [sslip.io](https://sslip.io) helped a lot. It resolves hostnames that contain an IP address:
 
 - `dvwa.127.0.0.1.sslip.io` -> `127.0.0.1`
 - `webgoat.192.168.1.50.sslip.io` -> `192.168.1.50`
@@ -185,7 +185,7 @@ vuln-pkg remove --purge    # Remove everything
 
 `vuln-pkg` came from repeatedly watching people burn time on setup friction that had nothing to do with learning security.
 
-It’s not some revolutionary invention. It’s mostly Traefik + sslip.io + a cleaner CLI experience. But sometimes that’s exactly what makes a tool useful.
+It is not some revolutionary invention. It is mostly Traefik + sslip.io + a cleaner CLI experience. But sometimes that is exactly what makes a tool useful.
 
 If you run training labs, host CTF exercises, or just want quick vulnerable targets without Docker busywork, give it a shot:
 
