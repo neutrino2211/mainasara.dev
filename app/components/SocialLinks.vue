@@ -2,6 +2,7 @@
 const socials = [
   { name: 'Github', icon: 'ph:github-logo', href: 'https://github.com/neutrino2211/' },
   { name: 'Twitter', icon: 'ph:twitter-logo', href: 'https://twitter.com/neutrino2211' },
+  { name: 'Bluesky', icon: 'simple-icons:bluesky', href: 'https://bsky.app/profile/neutrino2211.bsky.social' },
   { name: 'Twitch', icon: 'ph:twitch-logo', href: 'https://twitch.tv/Neutrino2211' },
   { name: 'Email', icon: 'ph:envelope', href: 'mailto:tsowamainasara@gmail.com' },
 ]

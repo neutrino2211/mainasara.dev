@@ -3,17 +3,15 @@ const { setPageTitle } = usePageTitle()
 setPageTitle("Mainasara's Post Tags")
 
 // Fetch all content to extract tags
-const { data: posts } = await useAsyncData('posts-for-tags', () =>
-  queryCollection('blog')
-    .where('draft', '<>', true)
-    .all()
-)
+const { data: posts } = await useAsyncData('posts-for-tags', async () => {
+  const all = await queryCollection('blog').all()
+  return all.filter(post => post.draft !== true)
+})
 
-const { data: talks } = await useAsyncData('talks-for-tags', () =>
-  queryCollection('talk')
-    .where('draft', '<>', true)
-    .all()
-)
+const { data: talks } = await useAsyncData('talks-for-tags', async () => {
+  const all = await queryCollection('talk').all()
+  return all.filter(talk => talk.draft !== true)
+})
 
 // Extract and count all tags
 const tagCounts = computed(() => {

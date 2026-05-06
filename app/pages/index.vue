@@ -3,19 +3,19 @@ const { setPageTitle } = usePageTitle()
 setPageTitle(null)
 
 // Fetch all content
-const { data: posts } = await useAsyncData('posts', () =>
-  queryCollection('blog')
-    .where('draft', '<>', true)
+const { data: posts } = await useAsyncData('posts', async () => {
+  const all = await queryCollection('blog')
     .order('pubDatetime', 'DESC')
     .all()
-)
+  return all.filter(post => post.draft !== true)
+})
 
-const { data: talks } = await useAsyncData('talks', () =>
-  queryCollection('talk')
-    .where('draft', '<>', true)
+const { data: talks } = await useAsyncData('talks', async () => {
+  const all = await queryCollection('talk')
     .order('pubDatetime', 'DESC')
     .all()
-)
+  return all.filter(talk => talk.draft !== true)
+})
 
 // Combine and sort all content
 const allContent = computed(() => {

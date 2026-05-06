@@ -1,18 +1,18 @@
+import { queryCollection } from '@nuxt/content/server'
+
 export default defineEventHandler(async (event) => {
   const siteUrl = 'https://blog.mainasara.dev'
   const feedTitle = "Mainasara's Blog"
   const feedDescription = 'A place where Mainasara says things.'
 
   // Fetch all published content using the new Content v3 API
-  const posts = await queryCollectionWithEvent(event, 'blog')
-    .where('draft', '<>', true)
+  const posts = (await queryCollection(event, 'blog')
     .order('pubDatetime', 'DESC')
-    .all()
+    .all()).filter(post => post.draft !== true)
 
-  const talks = await queryCollectionWithEvent(event, 'talk')
-    .where('draft', '<>', true)
+  const talks = (await queryCollection(event, 'talk')
     .order('pubDatetime', 'DESC')
-    .all()
+    .all()).filter(talk => talk.draft !== true)
 
   const allContent = [...posts, ...talks].sort(
     (a, b) => new Date(b.pubDatetime).getTime() - new Date(a.pubDatetime).getTime()

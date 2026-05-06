@@ -50,11 +50,26 @@ export default defineNuxtConfig({
       markdown: {
         toc: { depth: 3 },
         highlight: {
-          highlighter: 'shiki',
           theme: {
             default: 'github-light',
             dark: 'github-dark',
           },
+          langs: [
+            'js',
+            'jsx',
+            'json',
+            'ts',
+            'tsx',
+            'vue',
+            'css',
+            'html',
+            'bash',
+            'md',
+            'mdc',
+            'yaml',
+            'c',
+            'cpp',
+          ],
         },
       },
     },

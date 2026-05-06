@@ -8,17 +8,15 @@ const searchQuery = ref('')
 const searchInput = ref<HTMLInputElement | null>(null)
 
 // Fetch all content
-const { data: posts } = await useAsyncData('posts-for-search', () =>
-  queryCollection('blog')
-    .where('draft', '<>', true)
-    .all()
-)
+const { data: posts } = await useAsyncData('posts-for-search', async () => {
+  const all = await queryCollection('blog').all()
+  return all.filter(post => post.draft !== true)
+})
 
-const { data: talks } = await useAsyncData('talks-for-search', () =>
-  queryCollection('talk')
-    .where('draft', '<>', true)
-    .all()
-)
+const { data: talks } = await useAsyncData('talks-for-search', async () => {
+  const all = await queryCollection('talk').all()
+  return all.filter(talk => talk.draft !== true)
+})
 
 const allContent = computed(() => [
   ...(posts.value || []),

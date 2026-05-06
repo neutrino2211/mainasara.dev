@@ -50,23 +50,29 @@ watch(() => route.path, () => {
     <div class="page-container">
       <div class="card mt-2 px-4 py-3 sm:px-6 sm:py-4">
         <div class="flex items-center justify-between gap-4">
-          <!-- Logo / Dynamic Title -->
-        <NuxtLink
-          to="/"
-          class="min-w-0"
-        >
-          <Transition name="title" mode="out-in">
-            <span
-              :key="displayTitle"
-              class="block truncate font-display text-xl font-extrabold tracking-tight text-navy hover:text-coral dark:text-gray-100 dark:hover:text-cyan-accent sm:text-2xl"
-            >
-              {{ displayTitle }}
+          <!-- Dynamic Title + explicit home link -->
+          <div class="min-w-0">
+            <div class="flex items-baseline gap-2">
+              <NuxtLink
+                to="/"
+                class="shrink-0 text-2xl font-bold leading-none text-navy/70 transition-colors hover:text-coral dark:text-gray-300 dark:hover:text-cyan-accent sm:text-3xl"
+                aria-label="Go to home page"
+              >
+                /
+              </NuxtLink>
+              <Transition name="title" mode="out-in">
+                <span
+                  :key="displayTitle"
+                  class="block truncate font-display text-xl font-extrabold tracking-tight text-navy dark:text-gray-100 sm:text-2xl"
+                >
+                  {{ displayTitle }}
+                </span>
+              </Transition>
+            </div>
+            <span class="hidden text-xs font-medium uppercase tracking-[0.14em] text-navy/50 dark:text-gray-400 sm:block">
+              Journal • Essays • Talks
             </span>
-          </Transition>
-          <span class="hidden text-xs font-medium uppercase tracking-[0.14em] text-navy/50 dark:text-gray-400 sm:block">
-            Journal • Essays • Talks
-          </span>
-        </NuxtLink>
+          </div>
 
         <!-- Desktop Navigation -->
         <nav class="hidden items-center gap-2 sm:flex">

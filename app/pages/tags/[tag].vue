@@ -5,18 +5,16 @@ const tag = route.params.tag as string
 // Fetch all content and filter by tag client-side (CONTAINS not supported in SQLite)
 const { data: posts } = await useAsyncData(`posts-tag-${tag}`, async () => {
   const all = await queryCollection('blog')
-    .where('draft', '<>', true)
     .order('pubDatetime', 'DESC')
     .all()
-  return all.filter(post => post.tags?.includes(tag))
+  return all.filter(post => post.draft !== true && post.tags?.includes(tag))
 })
 
 const { data: talks } = await useAsyncData(`talks-tag-${tag}`, async () => {
   const all = await queryCollection('talk')
-    .where('draft', '<>', true)
     .order('pubDatetime', 'DESC')
     .all()
-  return all.filter(talk => talk.tags?.includes(tag))
+  return all.filter(talk => talk.draft !== true && talk.tags?.includes(tag))
 })
 
 // Combine and sort

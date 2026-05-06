@@ -2,12 +2,12 @@
 const { setPageTitle } = usePageTitle()
 setPageTitle("Mainasara's Posts")
 
-const { data: posts } = await useAsyncData('all-posts', () =>
-  queryCollection('blog')
-    .where('draft', '<>', true)
+const { data: posts } = await useAsyncData('all-posts', async () => {
+  const all = await queryCollection('blog')
     .order('pubDatetime', 'DESC')
     .all()
-)
+  return all.filter(post => post.draft !== true)
+})
 
 useSeoMeta({
   title: "Posts | Mainasara's Blog",

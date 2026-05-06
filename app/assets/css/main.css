@@ -82,13 +82,13 @@
     border: 2px solid rgb(var(--color-border));
     border-radius: 0;
     background: rgb(var(--color-card));
-    box-shadow: 7px 7px 0 rgb(var(--color-border));
+    box-shadow: 3px 3px 0 rgb(var(--color-border));
     transition: transform 180ms ease, box-shadow 180ms ease;
   }
 
   .card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 10px 10px 0 rgb(var(--color-border));
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 rgb(var(--color-border));
   }
 
   .accent-line {
@@ -125,7 +125,7 @@
   .btn-primary {
     color: rgb(253 248 238);
     background: rgb(var(--color-accent));
-    box-shadow: 4px 4px 0 rgb(var(--color-border));
+    box-shadow: 2px 2px 0 rgb(var(--color-border));
   }
 
   .btn-ghost {
@@ -180,7 +180,7 @@
 
   .search-input:focus {
     border-color: rgb(var(--color-accent));
-    box-shadow: 5px 5px 0 rgb(var(--color-border));
+    box-shadow: 3px 3px 0 rgb(var(--color-border));
     outline: none;
   }
 }
@@ -233,7 +233,7 @@
 }
 
 .prose {
-  @apply text-[1.02rem] leading-8;
+  @apply mx-auto text-[1.02rem] leading-8;
   color: rgb(var(--color-text) / 0.95);
   max-width: 72ch;
 }
@@ -394,6 +394,13 @@
     left: calc(100% + 1.35rem);
     right: auto;
   }
+
+  /* Keep the post container centered, but don't center the prose column
+     when hashiyya is locked to the right side. */
+  .prose:has(.hashiyya-aside) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .hashiyya-card {
@@ -401,7 +408,7 @@
   border: 2px solid rgb(var(--color-border));
   border-radius: 0;
   background: rgb(var(--color-card));
-  box-shadow: 6px 6px 0 rgb(var(--color-border));
+  box-shadow: 3px 3px 0 rgb(var(--color-border));
 }
 
 .hashiyya-title {
