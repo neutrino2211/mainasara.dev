@@ -2,6 +2,10 @@
 dist/
 .output/
 
+# Nuxt dev/build outputs
+.nuxt/
+*.nitro/
+
 # dependencies
 node_modules/
 
@@ -11,15 +15,19 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
 .env.production
+.env.*
+!.env.example
+
+# local ATProto sync state
+.data/standard-site-map.json
 
 # macOS-specific files
 .DS_Store
 
-# ignore .astro directory
+# ignore .astro directory (legacy)
 .astro
 
 # ignore Jampack cache files
@@ -33,3 +41,11 @@ pnpm-debug.log*
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+# IDE
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
