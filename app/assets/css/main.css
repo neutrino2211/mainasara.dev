@@ -146,11 +146,15 @@
     transition: border-color 200ms ease, color 200ms ease, transform 200ms ease;
   }
 
-  .tag:hover {
-    transform: translateY(-1px) rotate(-0.5deg);
-    background: rgb(var(--color-accent-2));
-    color: rgb(var(--color-text));
-  }
+.tag:hover {
+  transform: translateY(-1px) rotate(-0.5deg);
+  background: rgb(var(--color-accent-2));
+  color: rgb(var(--color-text));
+}
+
+.dark .tag:hover {
+  color: rgb(29 34 42);
+}
 
   .cursor-blink::after {
     content: '_';
@@ -163,6 +167,10 @@
     border: 2px solid rgb(var(--color-border));
     background: rgb(var(--color-accent-2));
     color: rgb(var(--color-text) / 0.95) !important;
+  }
+
+  .dark .nav-active {
+    color: rgb(29 34 42) !important;
   }
 
   .search-input {
@@ -301,11 +309,17 @@
 }
 
 .prose pre.shiki {
-  background-color: var(--shiki-default-bg, #f6f8fa) !important;
+  background-color: var(--shiki-default-bg, #fffdf7) !important;
+  color: var(--shiki-default, #0f172a) !important;
+  font-weight: 500;
 }
 
 .dark .prose pre.shiki {
   background-color: var(--shiki-dark-bg, #1f2937) !important;
+}
+
+.prose pre.shiki code {
+  color: inherit;
 }
 
 .prose :not(pre) > code {
@@ -422,4 +436,63 @@
 
 .hashiyya-body :last-child {
   margin-bottom: 0;
+}
+
+.ceasefire-banner {
+  background: linear-gradient(
+    90deg,
+    #ed1c24 0%,
+    #ed1c24 20%,
+    #ffffff 20%,
+    #ffffff 40%,
+    #007a3d 40%,
+    #007a3d 60%,
+    #ffffff 60%,
+    #ffffff 80%,
+    #000000 80%,
+    #000000 100%
+  );
+  border-bottom: 2px solid rgb(var(--color-border));
+}
+
+.ceasefire-banner .ceasefire-banner__text {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.4rem auto;
+  padding: 0.45rem 0.2rem;
+  font-weight: 800;
+  font-size: 0.92rem;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #10151f !important;
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.55);
+}
+
+.dark .ceasefire-banner .ceasefire-banner__text {
+  color: #10151f !important;
+}
+
+.ceasefire-banner__sep {
+  opacity: 0.75;
+}
+
+.ceasefire-banner__emoji {
+  font-size: 1.05rem;
+}
+
+@media (max-width: 640px) {
+  .ceasefire-banner__text {
+    gap: 0.35rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    padding: 0.4rem 0.65rem;
+  }
+
+  .ceasefire-banner__emoji {
+    font-size: 0.98rem;
+  }
 }

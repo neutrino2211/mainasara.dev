@@ -29,6 +29,14 @@ const featuredContent = computed(() =>
   allContent.value.filter(item => item.featured)
 )
 
+const featuredPreview = computed(() =>
+  featuredContent.value.slice(0, 4)
+)
+
+const hasMoreFeatured = computed(() =>
+  featuredContent.value.length > 4
+)
+
 const recentContent = computed(() =>
   allContent.value.slice(0, 4)
 )
@@ -103,19 +111,19 @@ useSeoMeta({
 
     <div class="accent-line" />
 
-    <section v-if="featuredContent.length" class="py-10">
+    <section v-if="featuredPreview.length" class="py-10">
       <div class="mb-6 flex items-end justify-between gap-4">
         <h2 class="font-display text-3xl font-extrabold tracking-tight text-navy dark:text-gray-100">
           Featured Essays
         </h2>
-        <NuxtLink to="/posts" class="btn btn-ghost hidden sm:inline-flex">
-          All Posts
+        <NuxtLink v-if="hasMoreFeatured" to="/posts" class="btn btn-ghost hidden sm:inline-flex">
+          View All
         </NuxtLink>
       </div>
 
       <div class="grid gap-5 lg:grid-cols-2">
         <PostCard
-          v-for="(item, index) in featuredContent"
+          v-for="(item, index) in featuredPreview"
           :key="item.path"
           :title="item.title"
           :description="item.description"
@@ -129,10 +137,16 @@ useSeoMeta({
           :style="{ animationFillMode: 'forwards' }"
         />
       </div>
+
+      <div v-if="hasMoreFeatured" class="mt-5 sm:hidden">
+        <NuxtLink to="/posts" class="btn btn-ghost">
+          View All
+        </NuxtLink>
+      </div>
     </section>
 
     <template v-if="recentContent.length">
-      <div v-if="featuredContent.length" class="accent-line" />
+      <div v-if="featuredPreview.length" class="accent-line" />
 
       <section class="py-10">
         <h2 class="font-display mb-6 text-3xl font-extrabold tracking-tight text-navy dark:text-gray-100">

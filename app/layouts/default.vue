@@ -4,6 +4,7 @@ const route = useRoute()
 
 <template>
   <div class="relative flex min-h-screen flex-col overflow-x-clip">
+    <CeasefireBanner />
     <AppHeader />
 
     <main class="relative z-10 flex-1">
