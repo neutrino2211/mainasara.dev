@@ -12,7 +12,9 @@
     "standard-site:sync": "node scripts/sync-standard-site-docs.mjs",
     "standard-site:dry-run": "node scripts/sync-standard-site-docs.mjs --dry-run",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "standard-site:push": "node scripts/sync-standard-site-docs.mjs --push-only",
+    "standard-site:pull": "node scripts/sync-standard-site-docs.mjs --pull-only"
   },
   "dependencies": {
     "@atproto/api": "^0.19.13",

@@ -339,6 +339,21 @@
   border-radius: 0;
 }
 
+.prose-image {
+  @apply my-7;
+}
+
+.prose-image img {
+  @apply my-0;
+}
+
+.prose-image__caption {
+  margin-top: 0.55rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgb(var(--color-text) / 0.72);
+}
+
 .prose hr {
   @apply my-10 border-none;
   height: 1px;
@@ -436,6 +451,62 @@
 
 .hashiyya-body :last-child {
   margin-bottom: 0;
+}
+
+.link-preview {
+  @apply my-7;
+}
+
+.link-preview__card {
+  display: block;
+  border: 2px solid rgb(var(--color-border));
+  background: rgb(var(--color-card));
+  box-shadow: 3px 3px 0 rgb(var(--color-border));
+  text-decoration: none !important;
+  color: inherit !important;
+  overflow: hidden;
+}
+
+.link-preview__card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 rgb(var(--color-border));
+}
+
+.link-preview__image {
+  width: 100%;
+  max-height: 16rem;
+  object-fit: cover;
+  border-bottom: 2px solid rgb(var(--color-border));
+}
+
+.link-preview__body {
+  padding: 0.85rem 1rem 1rem;
+}
+
+.link-preview__host {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgb(var(--color-accent));
+}
+
+.link-preview__title {
+  margin: 0.35rem 0 0;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: rgb(var(--color-text));
+}
+
+.link-preview__description {
+  margin: 0.55rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgb(var(--color-text) / 0.85);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .ceasefire-banner {
