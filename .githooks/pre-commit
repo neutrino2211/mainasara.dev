@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+printf '[pre-commit] Running Standard.site sync...\n'
+
+# Load env values from .env if available.
+if [[ -f ".env" ]]; then
+  # shellcheck disable=SC2046
+  export $(grep -v '^\s*#' .env | grep -E '^[A-Za-z_][A-Za-z0-9_]*=' | xargs)
+fi
+
+if [[ -z "${ATPROTO_IDENTIFIER:-}" || -z "${ATPROTO_APP_PASSWORD:-}" ]]; then
+  printf '[pre-commit] Skipping sync: ATPROTO_IDENTIFIER / ATPROTO_APP_PASSWORD not set in environment.\n'
+  exit 0
+fi
+
+npm run --silent standard-site:sync
+
+# Stage refreshed imported public assets if any changed.
+git add public/assets/imported 2>/dev/null || true
+
+printf '[pre-commit] Sync complete.\n'

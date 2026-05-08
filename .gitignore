@@ -23,6 +23,15 @@ pnpm-debug.log*
 
 # local ATProto sync state
 .data/standard-site-map.json
+.data/content/
+
+# generated imported markdown from remote sync
+content/blog/imported/
+content/talk/imported/
+
+# keep imported public assets tracked
+!public/assets/imported/
+!public/assets/imported/**
 
 # macOS-specific files
 .DS_Store

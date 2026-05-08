@@ -76,3 +76,21 @@ The sync state is saved in:
 - `.data/standard-site-map.json`
 
 It tracks source hash + remote record hash + AT URI mappings for idempotent two-way sync.
+
+## Git Hook Sync
+
+A local pre-commit hook is configured in `.githooks/pre-commit` to run:
+
+```bash
+npm run standard-site:sync
+```
+
+Install/refresh hooks path manually anytime with:
+
+```bash
+npm run hooks:install
+```
+
+The hook auto-stages refreshed imported public assets under `public/assets/imported`.
+
+Generated local pull artifacts under `content/*/imported` and `.data/content` are gitignored.

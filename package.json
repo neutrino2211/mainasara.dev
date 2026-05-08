@@ -8,13 +8,14 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "postinstall": "nuxt prepare && npm run hooks:install",
     "standard-site:sync": "node scripts/sync-standard-site-docs.mjs",
     "standard-site:dry-run": "node scripts/sync-standard-site-docs.mjs --dry-run",
     "lint": "eslint .",
     "format": "prettier --write .",
     "standard-site:push": "node scripts/sync-standard-site-docs.mjs --push-only",
-    "standard-site:pull": "node scripts/sync-standard-site-docs.mjs --pull-only"
+    "standard-site:pull": "node scripts/sync-standard-site-docs.mjs --pull-only",
+    "hooks:install": "node scripts/install-git-hooks.mjs"
   },
   "dependencies": {
     "@atproto/api": "^0.19.13",
