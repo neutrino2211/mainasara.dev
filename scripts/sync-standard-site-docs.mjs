@@ -322,11 +322,14 @@ async function collectLocalDocuments(publicationRef) {
       const parsed = matter(raw)
       if (isDraftLike(parsed.data)) continue
 
-      const relative = path.relative(source.dir, filePath)
+      const relative = path.relative(source.dir, filePath).replace(/\\/g, '/')
+      if (relative.startsWith('imported/')) continue
+
       const routePath = buildRoutePath(source.routePrefix, relative)
-      const sourceKey = `${source.kind}/${relative.replace(/\\/g, '/')}`
-      const textContent = markdownToPlainText(parsed.content)
-      const record = buildRecord(publicationRef, routePath, parsed.data, textContent, parsed.content.trim())
+      const sourceKey = `${source.kind}/${relative}`
+      const markdownBody = parsed.content.trim()
+      const textContent = markdownBody || markdownToPlainText(parsed.content)
+      const record = buildRecord(publicationRef, routePath, parsed.data, textContent, markdownBody)
 
       if (!record) {
         console.warn(`SKIP (invalid metadata): ${sourceKey}`)
@@ -510,6 +513,14 @@ async function runPull({ state, remoteDocs, importContext }) {
 
     const local = await readLocalFile(fileMeta.filePath)
     const stateDoc = state.documents[fileMeta.sourceKey]
+
+    if (!FORCE_PULL && !stateDoc && local.exists) {
+      conflicted += 1
+      console.warn(
+        `CONFLICT (pull): ${fileMeta.sourceKey} exists locally without sync state. Skipping to avoid overwrite; rerun with --force-pull to replace local content.`,
+      )
+      continue
+    }
 
     if (!FORCE_PULL && stateDoc?.recordHash && stateDoc.recordHash === remoteDoc.recordHash && local.exists) {
       skipped += 1

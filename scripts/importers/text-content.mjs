@@ -6,6 +6,11 @@ export const textContentImporter = {
   },
 
   async import({ remoteDoc, existingBody = '' }) {
+    const localBody = existingBody.trim()
+    if (localBody) {
+      return { body: `${localBody}\n` }
+    }
+
     const preferred = remoteDoc.record.textContent.trim()
     if (preferred) {
       return { body: `${preferred}\n` }
