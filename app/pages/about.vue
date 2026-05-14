@@ -191,7 +191,7 @@ const techStack = ['Go', 'C', 'C++', 'Node.js', 'Zig', 'Gleam', 'Python', 'Types
           Get In Touch
         </h2>
         <p class="mb-6 text-navy/80 dark:text-gray-300">
-          You can reach me via email or ping me on Bluesky.
+          You can reach me via email, Bluesky, or X.
         </p>
         <div class="flex justify-center gap-4">
           <a
@@ -209,6 +209,15 @@ const techStack = ['Go', 'C', 'C++', 'Node.js', 'Zig', 'Gleam', 'Python', 'Types
           >
             <Icon name="simple-icons:bluesky" class="h-5 w-5" />
             Bluesky
+          </a>
+          <a
+            href="https://x.com/alitesec"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost"
+          >
+            <Icon name="ph:twitter-logo" class="h-5 w-5" />
+            X
           </a>
         </div>
       </section>
