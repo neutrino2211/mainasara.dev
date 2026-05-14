@@ -191,7 +191,7 @@ const techStack = ['Go', 'C', 'C++', 'Node.js', 'Zig', 'Gleam', 'Python', 'Types
           Get In Touch
         </h2>
         <p class="mb-6 text-navy/80 dark:text-gray-300">
-          You can reach me via email or send me a DM on Twitter.
+          You can reach me via email or ping me on Bluesky.
         </p>
         <div class="flex justify-center gap-4">
           <a
@@ -202,13 +202,13 @@ const techStack = ['Go', 'C', 'C++', 'Node.js', 'Zig', 'Gleam', 'Python', 'Types
             Email
           </a>
           <a
-            href="https://twitter.com/neutrino2211"
+            href="https://bsky.app/profile/did:plc:p3cygo5s7wru2argeci6wfv6"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-ghost"
           >
-            <Icon name="ph:twitter-logo" class="h-5 w-5" />
-            Twitter
+            <Icon name="simple-icons:bluesky" class="h-5 w-5" />
+            Bluesky
           </a>
         </div>
       </section>

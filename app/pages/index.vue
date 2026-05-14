@@ -58,7 +58,6 @@ useSeoMeta({
   ogTitle: "Mainasara's Blog",
   ogDescription: 'A place where Mainasara says things.',
   ogImage: '/blog-og.jpg',
-  twitterCard: 'summary_large_image',
 })
 </script>
 

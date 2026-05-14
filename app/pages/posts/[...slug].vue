@@ -109,7 +109,7 @@ useSeoMeta({
     <div class="accent-line" />
 
     <!-- Share & Navigation -->
-    <footer class="flex items-center justify-between py-8">
+    <footer class="py-8">
       <NuxtLink
         to="/posts"
         class="btn btn-ghost"
@@ -117,19 +117,6 @@ useSeoMeta({
         <Icon name="ph:arrow-left" class="h-4 w-4" />
         All Posts
       </NuxtLink>
-
-      <div class="flex items-center gap-2">
-        <span class="text-sm text-navy/60 dark:text-gray-400">Share:</span>
-        <a
-          :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(post?.title || '')}&url=${encodeURIComponent(`https://blog.mainasara.dev/posts/${slug}`)}`"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="rounded-md p-2 transition-colors hover:bg-navy/5 dark:hover:bg-gray-200/10"
-          aria-label="Share on Twitter"
-        >
-          <Icon name="ph:twitter-logo" class="h-5 w-5" />
-        </a>
-      </div>
     </footer>
   </article>
 </template>
