@@ -1,12 +1,14 @@
 <script setup lang="ts">
 const bannerUnlocked = useState<boolean>('ceasefire-banner-unlocked', () => false)
+const bannerRequiresUnlock = useState<boolean>('ceasefire-banner-requires-unlock', () => false)
 const secretSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA']
+const showBanner = computed(() => !bannerRequiresUnlock.value || bannerUnlocked.value)
 
 let sequenceIndex = 0
 let tfpBannerCreated = false
 
 const createTFPBanner = () => {
-  if (typeof window === 'undefined' || tfpBannerCreated || !bannerUnlocked.value) return
+  if (typeof window === 'undefined' || tfpBannerCreated || !showBanner.value) return
 
   const tfpBanner = (window as any).TFPBanner
   if (!tfpBanner?.create) return
@@ -19,6 +21,7 @@ const createTFPBanner = () => {
 }
 
 const handleSecretSequence = (event: KeyboardEvent) => {
+  if (!bannerRequiresUnlock.value) return
   if (bannerUnlocked.value) return
 
   const expectedKey = secretSequence[sequenceIndex]
@@ -35,14 +38,16 @@ const handleSecretSequence = (event: KeyboardEvent) => {
   sequenceIndex = event.code === secretSequence[0] ? 1 : 0
 }
 
-watch(bannerUnlocked, unlocked => {
-  if (unlocked) createTFPBanner()
+watch(showBanner, isVisible => {
+  if (isVisible) createTFPBanner()
 })
 
 // Initialize hidden banner unlock + Swetrix analytics
 onMounted(() => {
   if (typeof window !== 'undefined') {
-    window.addEventListener('keydown', handleSecretSequence)
+    if (bannerRequiresUnlock.value) {
+      window.addEventListener('keydown', handleSecretSequence)
+    }
     createTFPBanner()
   }
 
@@ -57,7 +62,9 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   if (typeof window !== 'undefined') {
-    window.removeEventListener('keydown', handleSecretSequence)
+    if (bannerRequiresUnlock.value) {
+      window.removeEventListener('keydown', handleSecretSequence)
+    }
   }
 })
 </script>
