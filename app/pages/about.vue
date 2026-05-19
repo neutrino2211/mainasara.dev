@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { setPageTitle } = usePageTitle()
+const { xProfileUrl } = useXProfile()
 setPageTitle('Who is Mainasara?')
 
 useSeoMeta({
@@ -211,7 +212,7 @@ const techStack = ['Go', 'C', 'C++', 'Node.js', 'Zig', 'Gleam', 'Python', 'Types
             Bluesky
           </a>
           <a
-            href="https://x.com/alitesec"
+            :href="xProfileUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-ghost"

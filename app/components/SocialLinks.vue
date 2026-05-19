@@ -1,11 +1,13 @@
 <script setup lang="ts">
-const socials = [
+const { xProfileUrl } = useXProfile()
+
+const socials = computed(() => [
   { name: 'Github', icon: 'ph:github-logo', href: 'https://github.com/neutrino2211/' },
   { name: 'Bluesky', icon: 'simple-icons:bluesky', href: 'https://bsky.app/profile/did:plc:p3cygo5s7wru2argeci6wfv6' },
-  { name: 'X (Twitter)', icon: 'ph:twitter-logo', href: 'https://x.com/alitesec' },
+  { name: 'X (Twitter)', icon: 'ph:twitter-logo', href: xProfileUrl.value },
   { name: 'Twitch', icon: 'ph:twitch-logo', href: 'https://twitch.tv/Neutrino2211' },
   { name: 'Email', icon: 'ph:envelope', href: 'mailto:tsowamainasara@gmail.com' },
-]
+])
 </script>
 
 <template>
